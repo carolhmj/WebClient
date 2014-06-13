@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ClienteWS</string>
+    <string name="titulo_inicio">Menu de Tarefas</string>
+    <string name="nome_botao1">Listar Usuários</string>
+    <string name="teste">listarUsuario</string>
+    <string name="title_activity_listar">ListarActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="botao_voltar">Voltar</string>
+
+</resources>
