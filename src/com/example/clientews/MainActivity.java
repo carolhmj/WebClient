@@ -9,12 +9,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.clientews.Interface.GetListaUsuarioInterface;
+import com.clientews.Interface.InserirUsuarioInterface;
 import com.clientews.Interface.PesquisarUsuarioInterface;
 import com.clientews.entidade.Usuario;
 import com.clientews.task.GetListaUsuarioAsyncTask;
+import com.clientews.task.InserirUsuarioAsyncTask;
 import com.clientews.task.PesquisarUsuarioAsyncTask;
 
-public class MainActivity extends Activity implements GetListaUsuarioInterface, PesquisarUsuarioInterface {
+public class MainActivity extends Activity implements GetListaUsuarioInterface, PesquisarUsuarioInterface, InserirUsuarioInterface {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +52,19 @@ public class MainActivity extends Activity implements GetListaUsuarioInterface, 
 		pesquisarUsuario(p);
 	}
 	
+	public void chamaInserirUsuario(View v){
+		String p = "";
+		EditText nome = (EditText) findViewById(R.id.editText2);
+		EditText cpf = (EditText) findViewById(R.id.editText3);
+		p = ("{\"nomeUsuario\":" +"\""+ nome.getText().toString() + "\",\"cpfUsuario\":" + "\"" + cpf.getText().toString() + "\"}");
+		System.out.println(p);
+		inserirUsuario(p);
+	}
+	
+	public void inserirUsuario(String p){
+		new InserirUsuarioAsyncTask(this).execute(p);
+	}
+	
 	public void pesquisarUsuario(String p){
 		new PesquisarUsuarioAsyncTask(this).execute(p);
 	}
@@ -81,5 +96,11 @@ public class MainActivity extends Activity implements GetListaUsuarioInterface, 
 		else{
 			texto.setText("Não foram encontrados resultados.");
 		}
+	}
+
+	@Override
+	public void inserirUsuarioHandler(String p) {
+		System.out.println("wow deve ter dado certo!");
+		
 	}
 }

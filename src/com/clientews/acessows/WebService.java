@@ -49,7 +49,7 @@ public class WebService {
          try {
 
              HttpPost httpPost = new HttpPost(new URI(url));
-             httpPost.setHeader("content-type", "text/plain");
+             httpPost.setHeader("content-type", "application/json");
              StringEntity sEntity = new StringEntity(json);
              httpPost.setEntity(sEntity);
 

@@ -20,7 +20,6 @@
         android:layout_alignLeft="@+id/editTextBusca"
         android:layout_below="@+id/editTextBusca"
         android:onClick="chamaPesquisarUsuario"
-        android:focusable="false"
         android:text="@string/botaoPesquisa" />
 
     <Button
@@ -29,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView1"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="27dp"
+        android:layout_marginTop="18dp"
         android:onClick="chamaListarUsuario"
         android:text="@string/nome_botao1" />
 
@@ -39,11 +38,65 @@
         android:layout_height="wrap_content"
         android:layout_alignRight="@+id/botao1"
         android:layout_below="@+id/botao1"
-        android:layout_marginTop="31dp"
+        android:layout_marginTop="16dp"
         android:duplicateParentState="false"
         android:ems="10"
         android:inputType="text"
         android:onClick="chamaLimparTexto"
         android:text="@string/editTextBusca" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editText2"
+        android:layout_below="@+id/editText2"
+        android:layout_marginTop="14dp"
+        android:ems="10" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText3"
+        android:layout_centerHorizontal="true"
+        android:onClick="chamaInserirUsuario"
+        android:text="Inserir" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/botaoPesquisa"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="82dp"
+        android:ems="10" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/editText2"
+        android:layout_alignBottom="@+id/editText2"
+        android:layout_toLeftOf="@+id/editText2"
+        android:text="Nome:" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/editText3"
+        android:layout_alignBottom="@+id/editText3"
+        android:layout_toLeftOf="@+id/editText3"
+        android:text="CPF:" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="29dp"
+        android:text="Inserir Novo Usuário" />
 
 </RelativeLayout>
