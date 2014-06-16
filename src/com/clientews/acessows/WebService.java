@@ -7,10 +7,6 @@ import java.net.URI;
 
 import android.util.Log;
 
-
-
-
-
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -53,7 +49,7 @@ public class WebService {
          try {
 
              HttpPost httpPost = new HttpPost(new URI(url));
-             httpPost.setHeader("content-type", "application/json");
+             httpPost.setHeader("content-type", "text/plain");
              StringEntity sEntity = new StringEntity(json);
              httpPost.setEntity(sEntity);
 

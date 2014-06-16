@@ -4,26 +4,26 @@ import java.util.List;
 
 import android.os.AsyncTask;
 
-import com.clientews.Interface.GetListaUsuarioInterface;
+import com.clientews.Interface.PesquisarUsuarioInterface;
 import com.clientews.acessows.UsuarioREST;
 import com.clientews.entidade.Usuario;
 
-public class GetListaUsuarioAsyncTask extends AsyncTask<Void, Void, List<Usuario>> {
+public class PesquisarUsuarioAsyncTask extends AsyncTask<String, Void, List<Usuario>> {
 	
-	private GetListaUsuarioInterface glui;
+	private PesquisarUsuarioInterface pui;
 	
 
-	public GetListaUsuarioAsyncTask(GetListaUsuarioInterface glui) {
+	public PesquisarUsuarioAsyncTask(PesquisarUsuarioInterface pui) {
 		super();
-		this.glui = glui;
+		this.pui = pui;
 	}
 
 	@Override
-	protected List<Usuario> doInBackground(Void... params) {
+	protected List<Usuario> doInBackground(String... p) {
 		UsuarioREST ur = new UsuarioREST();
 		List<Usuario> usuarios;
 		try {
-			usuarios = ur.getUsuario();
+			usuarios = ur.buscarUsuario(p[0]);
 			return usuarios;
 		} catch (Exception e) {
 			
@@ -34,8 +34,9 @@ public class GetListaUsuarioAsyncTask extends AsyncTask<Void, Void, List<Usuario
 	
 	@Override
 	protected void onPostExecute(List<Usuario> result) {
-		glui.listaUsuarioHandler(result);
+		pui.pesquisarUsuarioHandler(result);
 		super.onPostExecute(result);
 	}
+
 
 }

@@ -4,17 +4,6 @@
     android:layout_height="match_parent"
     tools:context="${packageName}.${activityClass}" >
 
-    <Button
-        android:id="@+id/botao1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/textView1"
-        android:layout_marginLeft="22dp"
-        android:layout_marginTop="60dp"
-        android:onClick="chamaListarUsuario"
-        android:text="@string/nome_botao1" />
-
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
@@ -23,5 +12,38 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="29dp"
         android:text="@string/titulo_inicio" />
+
+    <Button
+        android:id="@+id/botaoPesquisa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editTextBusca"
+        android:layout_below="@+id/editTextBusca"
+        android:onClick="chamaPesquisarUsuario"
+        android:focusable="false"
+        android:text="@string/botaoPesquisa" />
+
+    <Button
+        android:id="@+id/botao1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp"
+        android:onClick="chamaListarUsuario"
+        android:text="@string/nome_botao1" />
+
+    <EditText
+        android:id="@+id/editTextBusca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/botao1"
+        android:layout_below="@+id/botao1"
+        android:layout_marginTop="31dp"
+        android:duplicateParentState="false"
+        android:ems="10"
+        android:inputType="text"
+        android:onClick="chamaLimparTexto"
+        android:text="@string/editTextBusca" />
 
 </RelativeLayout>

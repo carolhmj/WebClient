@@ -1,6 +1,5 @@
 package com.clientews.Interface;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.clientews.entidade.Usuario;

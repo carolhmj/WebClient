@@ -8,5 +8,8 @@
     <string name="title_activity_listar">ListarActivity</string>
     <string name="hello_world">Hello world!</string>
     <string name="botao_voltar">Voltar</string>
+    <string name="botaoPesquisa">Pesquisar</string>
+    <string name="editTextBusca">NomeUsuario</string>
+    
 
 </resources>
