@@ -1,11 +1,7 @@
 package com.clientews.task;
 
-import java.util.List;
-
 import com.clientews.Interface.InserirUsuarioInterface;
 import com.clientews.acessows.UsuarioREST;
-import com.clientews.entidade.Usuario;
-
 import android.os.AsyncTask;
 
 public class InserirUsuarioAsyncTask extends AsyncTask<String, Void, String>{

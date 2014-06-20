@@ -3,6 +3,7 @@ package com.example.clientews;
 import java.util.List;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -59,6 +60,14 @@ public class MainActivity extends Activity implements GetListaUsuarioInterface, 
 		p = ("{\"nomeUsuario\":" +"\""+ nome.getText().toString() + "\",\"cpfUsuario\":" + "\"" + cpf.getText().toString() + "\"}");
 		System.out.println(p);
 		inserirUsuario(p);
+		limpaCamposUsuario();
+	}
+	
+	public void limpaCamposUsuario(){
+		EditText nome = (EditText) findViewById(R.id.editText2);
+		EditText cpf = (EditText) findViewById(R.id.editText3);
+		nome.setText("");
+		cpf.setText("");
 	}
 	
 	public void inserirUsuario(String p){
@@ -97,10 +106,11 @@ public class MainActivity extends Activity implements GetListaUsuarioInterface, 
 			texto.setText("Não foram encontrados resultados.");
 		}
 	}
+	
 
 	@Override
 	public void inserirUsuarioHandler(String p) {
-		System.out.println("wow deve ter dado certo!");
+		System.out.println(p);
 		
 	}
 }

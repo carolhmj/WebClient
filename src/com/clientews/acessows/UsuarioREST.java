@@ -75,9 +75,7 @@ public class UsuarioREST {
 				throw new Exception(json[1]);
 			}
 		}catch(Exception e){
-			usuariojson = new JSONObject(json[1]);
-			System.out.println(usuariojson);
-			System.out.println(usuariojson.get("idUsuario"));
+			usuariojson = new JSONObject(json[1]).getJSONObject("usuario");
 			Usuario usuario = new Usuario();
 			
 			usuario.setCpfUsuario(usuariojson.getString("cpfUsuario"));
